@@ -35,7 +35,31 @@ public:
 
 	bool full() { return count == size; }
 
-	T front() { return pMem[start]; }
+	T front() {
+		if (empty()) throw "The queue is empty";
+		return pMem[start];
+	}
 
-	T back() { return pMem[finish]; }
+	T back() {
+		if (empty()) throw "The queue is empty";
+		return pMem[finish];
+	}
+
+	bool operator==(const TQueue& q) {
+		if (size != q.size) return false;
+		else if (count != q.count) return false;
+		else if (start != q.start) return false;
+		else {
+			for (int i = 0; i++; i < count) {
+				if (pMem[i] != q.pMem[i]) return false;
+			}
+		}
+		return true;
+	}
+
+	bool operator!=(const TQueue& q) {
+		return !(*this == q);
+	}
+
+	int getCount() { return count; }
 };
