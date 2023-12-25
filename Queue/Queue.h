@@ -61,5 +61,9 @@ public:
 		return !(*this == q);
 	}
 
-	int getCount() { return count; }
+	int getMaxSize() { return size; }
+
+	int getSize() { return count; }
+
+	int getHead() { return start; }
 };

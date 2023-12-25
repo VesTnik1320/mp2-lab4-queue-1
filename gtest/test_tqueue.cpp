@@ -11,11 +11,11 @@ TEST(TQueue, CANT_CREATE_NEGATIVE_QUEUE)
     ASSERT_ANY_THROW(TQueue<int> q(-5));
 }
 
-TEST(TQueue, CAN_GET_COUNT)
+TEST(TQueue, CAN_GET_SIZE)
 {
     TQueue<int> q(5);
 
-    EXPECT_EQ(0, q.getCount());
+    EXPECT_EQ(0, q.getSize());
 }
 
 TEST(TQueue, NEW_QUEUE_IS_EMPTY)
