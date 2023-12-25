@@ -25,6 +25,7 @@ namespace Forma1 {
 		Random^ rnd1;
 		Pen^ BlackPen;
 		Pen^ WhitePen;
+		bool flag;
 	private: System::Windows::Forms::TextBox^ textBox_maxsize;
 	private: System::Windows::Forms::Label^ label_maxsize;
 
@@ -79,6 +80,7 @@ namespace Forma1 {
 			Width = Height = 200;
 
 			PopCount = PushCount = 0;
+			flag = 0;
 		}
 
 	protected:
@@ -366,17 +368,21 @@ namespace Forma1 {
 		}
 
 		private: System::Void button_go_Click(System::Object^ sender, System::EventArgs^ e) { // MOVE
+			if (MaxSize != Convert::ToInt32(textBox_maxsize->Text)) flag = 0;
+			if (flag == 0) {
 			//Чтение параметров с формы
-			MaxSize = Convert::ToInt32(textBox_maxsize->Text);
-			Size = Convert::ToInt32(textBox_size->Text);
+				flag = 1;
+				MaxSize = Convert::ToInt32(textBox_maxsize->Text);
+				Size = Convert::ToInt32(textBox_size->Text);
+				//Создание и заполнение очереди
+				pQueue = new TQueue<int>(MaxSize);
+				for (int i = 0; i < Size; i++) {
+					pQueue->push(1);
+				}
+				//DrawQueue();
+			}
 			P = Convert::ToDouble(textBox_p->Text);
 			Q = Convert::ToDouble(textBox_q->Text);
-			//Создание и заполнение очереди
-			pQueue = new TQueue<int>(MaxSize);
-			for (int i = 0; i < Size; i++) {
-				pQueue->push(1);
-			}
-			DrawQueue();
 			timer1->Enabled = true;
 		}
 		void DrawQueue() {
@@ -407,6 +413,7 @@ namespace Forma1 {
 			}
 			catch (const char* ex)
 			{
+				flag = 0;
 				label_err->Text = "Queue is full or empty";
 				timer1->Enabled = false;
 				Clean();
