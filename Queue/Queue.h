@@ -50,15 +50,47 @@ public:
 		else if (count != q.count) return false;
 		else if (start != q.start) return false;
 		else {
-			for (int i = 0; i++; i < count) {
-				if (pMem[i] != q.pMem[i]) return false;
+			if (start < finish) {
+				for (int i = start; i < finish;  i++) {
+					if (pMem[i] != q.pMem[i]) return false;
+				}
+			}
+			else if (start > finish) {
+				for (int i = start; i < size; i++) {
+					if (pMem[i] != q.pMem[i]) return false;
+				}
+				for (int i = 0; i < finish; i++) {
+					if (pMem[i] != q.pMem[i]) return false;
+				}
 			}
 		}
 		return true;
+
+		/*if (count != q.count) return false;
+		int i = 0;
+		while (i <= finish)
+		{
+			i = i % size;
+			if (pMem[i] != q.pMem[i]) return false;
+
+		}
+		return true;*/
 	}
 
 	bool operator!=(const TQueue& q) {
 		return !(*this == q);
+	}
+
+	TQueue& operator= (const TQueue& q)
+	{
+		if (*this == q) return *this;
+		delete[] pMem;
+		size = q.size;
+		count = q.count;
+		start = q.start;
+		pMem = new T[size];
+		std::copy(q.pMem, q.pMem + size, pMem);
+		return *this;
 	}
 
 	int getMaxSize() { return size; }
