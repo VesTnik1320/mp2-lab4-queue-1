@@ -49,6 +49,21 @@ public:
 			pLast->pNext = tmp;
 			pLast = tmp;
 		}
+
+		//if (is_full()) {
+		//	throw "full queue";
+		//}
+		//TNode<T>* newElem = new TNode<T>;
+		//if (is_empty()) {
+		//	pFirst = newElem;
+		//	pLast = newElem;
+		//}
+		//else {
+		//	pLast->pNext = newElem;
+		//	pLast = newElem;
+		//}
+		//newElem->val = el;
+		//newElem->pNext = nullptr;
 	}
 
 	T pop() {
@@ -56,9 +71,24 @@ public:
 		TNode<T>* tmp = pFirst;
 		T el = pFirst->val;
 		pFirst = pFirst->pNext;
-		//delete tmp;
+		if (pFirst == nullptr) {
+			pLast = nullptr;
+		}
+		delete tmp;
 		return el;
 		//когда 1 элемент?
+
+		//if (is_empty()) {
+		//	throw "empty queue";
+		//}
+		//TNode<T>* p = pFirst;
+		//T el = pFirst->val;
+		//pFirst = pFirst->pNext;
+		//if (pFirst == nullptr) {
+		//	pLast = nullptr;
+		//}
+		//delete p;
+		//return el;
 	}
 
 	bool empty() { return pFirst == nullptr; }
@@ -70,9 +100,15 @@ public:
 		return res;
 	}
 
-	T front() { return pFirst->val; }
+	T front() {
+		if (empty()) throw "The queue is empty";
+		return pFirst->val;
+	}
 
-	T back() { return pLast->val; }
+	T back() {
+		if (empty()) throw "The queue is empty";
+		return pLast->val;
+	}
 
 	bool operator==(const TQueue& q) {
 		TNode<T>* pRight = q.pFirst, * pLeft = pFirst;

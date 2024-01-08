@@ -90,5 +90,5 @@ TEST(TQueue, COMPARE_TWO_DIFFERENT_QUEUES)
     q1.push(0); q1.push(0);
     q2.push(1); q2.push(1);
 
-    ASSERT_FALSE(q1 != q2);
+    ASSERT_TRUE(q1 != q2);
 }
