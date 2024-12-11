@@ -17,7 +17,7 @@ public:
 	void push(const T& el) {
 		if (full()) throw "The queue is full";
 		finish++;
-		finish %= size; //if (finish == size) finish = 0;
+		if (finish == size) finish = 0;
 		pMem[finish] = el;
 		count++;
 	}
@@ -26,7 +26,7 @@ public:
 		if (empty()) throw "The queue is empty";
 		T el = pMem[start];
 		start++;
-		start %= size; // if (start == size) start = 0;
+		if (start == size) start = 0;
 		count--;
 		return el;
 	}
@@ -65,16 +65,6 @@ public:
 			}
 		}
 		return true;
-
-		/*if (count != q.count) return false;
-		int i = 0;
-		while (i <= finish)
-		{
-			i = i % size;
-			if (pMem[i] != q.pMem[i]) return false;
-
-		}
-		return true;*/
 	}
 
 	bool operator!=(const TQueue& q) {

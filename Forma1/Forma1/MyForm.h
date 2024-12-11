@@ -29,7 +29,7 @@ namespace Forma1 {
 	private: System::Windows::Forms::TextBox^ textBox_maxsize;
 	private: System::Windows::Forms::Label^ label_maxsize;
 
-	private: System::Windows::Forms::Button^ button_close;
+
 
 	private: System::Windows::Forms::Label^ label_size;
 	private: System::Windows::Forms::TextBox^ textBox_size;
@@ -54,6 +54,8 @@ namespace Forma1 {
 	private: System::Windows::Forms::Label^ label_poppedres;
 	private: System::Windows::Forms::Label^ label_cursizeres;
 	private: System::Windows::Forms::Label^ label_err;
+
+
 
 
 
@@ -118,7 +120,6 @@ namespace Forma1 {
 			this->button_go = (gcnew System::Windows::Forms::Button());
 			this->textBox_maxsize = (gcnew System::Windows::Forms::TextBox());
 			this->label_maxsize = (gcnew System::Windows::Forms::Label());
-			this->button_close = (gcnew System::Windows::Forms::Button());
 			this->label_size = (gcnew System::Windows::Forms::Label());
 			this->textBox_size = (gcnew System::Windows::Forms::TextBox());
 			this->label_p = (gcnew System::Windows::Forms::Label());
@@ -138,18 +139,18 @@ namespace Forma1 {
 			// 
 			// button_go
 			// 
-			this->button_go->Location = System::Drawing::Point(591, 68);
+			this->button_go->Location = System::Drawing::Point(58, 225);
 			this->button_go->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->button_go->Name = L"button_go";
 			this->button_go->Size = System::Drawing::Size(150, 50);
 			this->button_go->TabIndex = 10;
-			this->button_go->Text = L"Go";
+			this->button_go->Text = L"Старт";
 			this->button_go->UseVisualStyleBackColor = true;
 			this->button_go->Click += gcnew System::EventHandler(this, &MyForm::button_go_Click);
 			// 
 			// textBox_maxsize
 			// 
-			this->textBox_maxsize->Location = System::Drawing::Point(346, 32);
+			this->textBox_maxsize->Location = System::Drawing::Point(204, 12);
 			this->textBox_maxsize->Name = L"textBox_maxsize";
 			this->textBox_maxsize->Size = System::Drawing::Size(100, 21);
 			this->textBox_maxsize->TabIndex = 11;
@@ -158,34 +159,24 @@ namespace Forma1 {
 			// label_maxsize
 			// 
 			this->label_maxsize->AutoSize = true;
-			this->label_maxsize->Location = System::Drawing::Point(154, 32);
+			this->label_maxsize->Location = System::Drawing::Point(12, 12);
 			this->label_maxsize->Name = L"label_maxsize";
-			this->label_maxsize->Size = System::Drawing::Size(127, 15);
+			this->label_maxsize->Size = System::Drawing::Size(196, 15);
 			this->label_maxsize->TabIndex = 13;
-			this->label_maxsize->Text = L"Max size of the queue";
-			// 
-			// button_close
-			// 
-			this->button_close->Location = System::Drawing::Point(897, 12);
-			this->button_close->Name = L"button_close";
-			this->button_close->Size = System::Drawing::Size(75, 72);
-			this->button_close->TabIndex = 15;
-			this->button_close->Text = L"Close";
-			this->button_close->UseVisualStyleBackColor = true;
-			this->button_close->Click += gcnew System::EventHandler(this, &MyForm::button_close_Click);
+			this->label_maxsize->Text = L"Максимальный размер Очереди";
 			// 
 			// label_size
 			// 
 			this->label_size->AutoSize = true;
-			this->label_size->Location = System::Drawing::Point(154, 59);
+			this->label_size->Location = System::Drawing::Point(12, 39);
 			this->label_size->Name = L"label_size";
-			this->label_size->Size = System::Drawing::Size(128, 15);
+			this->label_size->Size = System::Drawing::Size(185, 15);
 			this->label_size->TabIndex = 17;
-			this->label_size->Text = L"Start size of the queue";
+			this->label_size->Text = L"Изначальный размер Очереди";
 			// 
 			// textBox_size
 			// 
-			this->textBox_size->Location = System::Drawing::Point(346, 59);
+			this->textBox_size->Location = System::Drawing::Point(204, 39);
 			this->textBox_size->Name = L"textBox_size";
 			this->textBox_size->Size = System::Drawing::Size(100, 21);
 			this->textBox_size->TabIndex = 16;
@@ -194,15 +185,15 @@ namespace Forma1 {
 			// label_p
 			// 
 			this->label_p->AutoSize = true;
-			this->label_p->Location = System::Drawing::Point(154, 86);
+			this->label_p->Location = System::Drawing::Point(12, 66);
 			this->label_p->Name = L"label_p";
-			this->label_p->Size = System::Drawing::Size(115, 15);
+			this->label_p->Size = System::Drawing::Size(138, 15);
 			this->label_p->TabIndex = 19;
-			this->label_p->Text = L"Probabilty of push P";
+			this->label_p->Text = L"Вероятность захода P";
 			// 
 			// textBox_p
 			// 
-			this->textBox_p->Location = System::Drawing::Point(346, 86);
+			this->textBox_p->Location = System::Drawing::Point(204, 66);
 			this->textBox_p->Name = L"textBox_p";
 			this->textBox_p->Size = System::Drawing::Size(100, 21);
 			this->textBox_p->TabIndex = 18;
@@ -211,15 +202,15 @@ namespace Forma1 {
 			// label_q
 			// 
 			this->label_q->AutoSize = true;
-			this->label_q->Location = System::Drawing::Point(154, 113);
+			this->label_q->Location = System::Drawing::Point(12, 93);
 			this->label_q->Name = L"label_q";
-			this->label_q->Size = System::Drawing::Size(110, 15);
+			this->label_q->Size = System::Drawing::Size(149, 15);
 			this->label_q->TabIndex = 21;
-			this->label_q->Text = L"Probabilty of pop Q";
+			this->label_q->Text = L"Вероятность выброса Q";
 			// 
 			// textBox_q
 			// 
-			this->textBox_q->Location = System::Drawing::Point(346, 113);
+			this->textBox_q->Location = System::Drawing::Point(204, 93);
 			this->textBox_q->Name = L"textBox_q";
 			this->textBox_q->Size = System::Drawing::Size(100, 21);
 			this->textBox_q->TabIndex = 20;
@@ -227,12 +218,12 @@ namespace Forma1 {
 			// 
 			// button_stop
 			// 
-			this->button_stop->Location = System::Drawing::Point(591, 127);
+			this->button_stop->Location = System::Drawing::Point(58, 309);
 			this->button_stop->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->button_stop->Name = L"button_stop";
 			this->button_stop->Size = System::Drawing::Size(150, 50);
 			this->button_stop->TabIndex = 22;
-			this->button_stop->Text = L"Stop";
+			this->button_stop->Text = L"Стоп";
 			this->button_stop->UseVisualStyleBackColor = true;
 			this->button_stop->Click += gcnew System::EventHandler(this, &MyForm::button_stop_Click);
 			// 
@@ -243,34 +234,34 @@ namespace Forma1 {
 			// label_PopCount
 			// 
 			this->label_PopCount->AutoSize = true;
-			this->label_PopCount->Location = System::Drawing::Point(154, 167);
+			this->label_PopCount->Location = System::Drawing::Point(12, 147);
 			this->label_PopCount->Name = L"label_PopCount";
-			this->label_PopCount->Size = System::Drawing::Size(50, 15);
+			this->label_PopCount->Size = System::Drawing::Size(63, 15);
 			this->label_PopCount->TabIndex = 26;
-			this->label_PopCount->Text = L"Popped";
+			this->label_PopCount->Text = L"Выкинуло";
 			// 
 			// label_PushCount
 			// 
 			this->label_PushCount->AutoSize = true;
-			this->label_PushCount->Location = System::Drawing::Point(154, 140);
+			this->label_PushCount->Location = System::Drawing::Point(12, 120);
 			this->label_PushCount->Name = L"label_PushCount";
-			this->label_PushCount->Size = System::Drawing::Size(49, 15);
+			this->label_PushCount->Size = System::Drawing::Size(61, 15);
 			this->label_PushCount->TabIndex = 24;
-			this->label_PushCount->Text = L"Pushed";
+			this->label_PushCount->Text = L"Закинуло";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(154, 194);
+			this->label1->Location = System::Drawing::Point(12, 174);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(143, 15);
+			this->label1->Size = System::Drawing::Size(154, 15);
 			this->label1->TabIndex = 28;
-			this->label1->Text = L"Current size of the queue";
+			this->label1->Text = L"Текущий размер Очереди";
 			// 
 			// label_pushedres
 			// 
 			this->label_pushedres->AutoSize = true;
-			this->label_pushedres->Location = System::Drawing::Point(368, 140);
+			this->label_pushedres->Location = System::Drawing::Point(226, 120);
 			this->label_pushedres->Name = L"label_pushedres";
 			this->label_pushedres->Size = System::Drawing::Size(0, 15);
 			this->label_pushedres->TabIndex = 29;
@@ -278,7 +269,7 @@ namespace Forma1 {
 			// label_poppedres
 			// 
 			this->label_poppedres->AutoSize = true;
-			this->label_poppedres->Location = System::Drawing::Point(368, 167);
+			this->label_poppedres->Location = System::Drawing::Point(226, 147);
 			this->label_poppedres->Name = L"label_poppedres";
 			this->label_poppedres->Size = System::Drawing::Size(0, 15);
 			this->label_poppedres->TabIndex = 30;
@@ -286,7 +277,7 @@ namespace Forma1 {
 			// label_cursizeres
 			// 
 			this->label_cursizeres->AutoSize = true;
-			this->label_cursizeres->Location = System::Drawing::Point(368, 194);
+			this->label_cursizeres->Location = System::Drawing::Point(226, 174);
 			this->label_cursizeres->Name = L"label_cursizeres";
 			this->label_cursizeres->Size = System::Drawing::Size(0, 15);
 			this->label_cursizeres->TabIndex = 31;
@@ -294,7 +285,7 @@ namespace Forma1 {
 			// label_err
 			// 
 			this->label_err->AutoSize = true;
-			this->label_err->Location = System::Drawing::Point(422, 327);
+			this->label_err->Location = System::Drawing::Point(314, 243);
 			this->label_err->Name = L"label_err";
 			this->label_err->Size = System::Drawing::Size(0, 15);
 			this->label_err->TabIndex = 32;
@@ -303,7 +294,7 @@ namespace Forma1 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(984, 661);
+			this->ClientSize = System::Drawing::Size(720, 593);
 			this->Controls->Add(this->label_err);
 			this->Controls->Add(this->label_cursizeres);
 			this->Controls->Add(this->label_poppedres);
@@ -318,7 +309,6 @@ namespace Forma1 {
 			this->Controls->Add(this->textBox_p);
 			this->Controls->Add(this->label_size);
 			this->Controls->Add(this->textBox_size);
-			this->Controls->Add(this->button_close);
 			this->Controls->Add(this->label_maxsize);
 			this->Controls->Add(this->textBox_maxsize);
 			this->Controls->Add(this->button_go);
@@ -326,7 +316,7 @@ namespace Forma1 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"MyForm";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->Text = L"Queue Circle Buffer";
+			this->Text = L"Циркулирующая очередь";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -414,7 +404,7 @@ namespace Forma1 {
 			catch (const char* ex)
 			{
 				flag = 0;
-				label_err->Text = "Queue is full or empty";
+				label_err->Text = "Очередь заполнена или пуста";
 				timer1->Enabled = false;
 				Clean();
 				delete pQueue;
@@ -426,9 +416,7 @@ namespace Forma1 {
 
 			}
 		}
-		private: System::Void button_close_Click(System::Object^ sender, System::EventArgs^ e) {
-			this->Close();
-		}
+		
 		private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		}
 	};
