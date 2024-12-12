@@ -386,25 +386,54 @@ namespace Forma1 {
 		private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
 			try
 			{
+				// Сохраняем текущий размер очереди в переменную
+				int CurrentSize = pQueue->getSize();
+
+				// Проверяем, не пуста ли очередь перед очисткой
 				if (!pQueue->empty()) Clean();
+
+				// Обновляем состояние очереди
 				if (rnd1->NextDouble() < P) {
-					pQueue->push(1);
-					PushCount++;
+					if (!pQueue->full()) {
+						pQueue->push(1);
+						PushCount++;
+					}
 				}
 				if (rnd1->NextDouble() < Q) {
-					pQueue->pop();
-					PopCount++;
+					if (!pQueue->empty()) {
+						pQueue->pop();
+						PopCount++;
+					}
 				}
+
+				// Обновляем текущий размер очереди
+				CurrentSize = pQueue->getSize();
+
+				// Рисуем очередь
 				DrawQueue();
+
+				// Обновляем текстовые поля
 				label_pushedres->Text = Convert::ToString(PushCount);
 				label_poppedres->Text = Convert::ToString(PopCount);
-				label_cursizeres->Text = Convert::ToString(pQueue->getSize());
+				label_cursizeres->Text = Convert::ToString(CurrentSize);
 
+				// Проверяем, заполнена ли очередь или пуста
+				if (CurrentSize == MaxSize) {
+					label_err->Text = "Очередь заполнена";
+					timer1->Enabled = false;
+				}
+				else if (CurrentSize == 0) {
+					label_err->Text = "Очередь пуста";
+					timer1->Enabled = false;
+				}
+				else {
+					label_err->Text = "";
+				}
 			}
 			catch (const char* ex)
 			{
 				flag = 0;
-				label_err->Text = "Очередь заполнена или пуста";
+				label_err->Text = "Ошибка: " + gcnew String(ex);
 				timer1->Enabled = false;
 				Clean();
 				delete pQueue;
@@ -413,7 +442,6 @@ namespace Forma1 {
 				label_pushedres->Text = Convert::ToString(0);
 				label_poppedres->Text = Convert::ToString(0);
 				label_cursizeres->Text = Convert::ToString(0);
-
 			}
 		}
 		
