@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include "../../Queue/Queue.h"
 
 namespace Forma1 {
@@ -11,7 +11,7 @@ namespace Forma1 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// РЎРІРѕРґРєР° РґР»СЏ MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -66,7 +66,7 @@ namespace Forma1 {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 
 			gr = CreateGraphics();
@@ -87,7 +87,7 @@ namespace Forma1 {
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~MyForm()
 		{
@@ -105,14 +105,14 @@ namespace Forma1 {
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -144,7 +144,7 @@ namespace Forma1 {
 			this->button_go->Name = L"button_go";
 			this->button_go->Size = System::Drawing::Size(150, 50);
 			this->button_go->TabIndex = 10;
-			this->button_go->Text = L"Старт";
+			this->button_go->Text = L"РЎС‚Р°СЂС‚";
 			this->button_go->UseVisualStyleBackColor = true;
 			this->button_go->Click += gcnew System::EventHandler(this, &MyForm::button_go_Click);
 			// 
@@ -163,7 +163,7 @@ namespace Forma1 {
 			this->label_maxsize->Name = L"label_maxsize";
 			this->label_maxsize->Size = System::Drawing::Size(196, 15);
 			this->label_maxsize->TabIndex = 13;
-			this->label_maxsize->Text = L"Максимальный размер Очереди";
+			this->label_maxsize->Text = L"РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ РћС‡РµСЂРµРґРё";
 			// 
 			// label_size
 			// 
@@ -172,7 +172,7 @@ namespace Forma1 {
 			this->label_size->Name = L"label_size";
 			this->label_size->Size = System::Drawing::Size(185, 15);
 			this->label_size->TabIndex = 17;
-			this->label_size->Text = L"Изначальный размер Очереди";
+			this->label_size->Text = L"РР·РЅР°С‡Р°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ РћС‡РµСЂРµРґРё";
 			// 
 			// textBox_size
 			// 
@@ -189,7 +189,7 @@ namespace Forma1 {
 			this->label_p->Name = L"label_p";
 			this->label_p->Size = System::Drawing::Size(138, 15);
 			this->label_p->TabIndex = 19;
-			this->label_p->Text = L"Вероятность захода P";
+			this->label_p->Text = L"Р’РµСЂРѕСЏС‚РЅРѕСЃС‚СЊ Р·Р°С…РѕРґР° P";
 			// 
 			// textBox_p
 			// 
@@ -206,7 +206,7 @@ namespace Forma1 {
 			this->label_q->Name = L"label_q";
 			this->label_q->Size = System::Drawing::Size(149, 15);
 			this->label_q->TabIndex = 21;
-			this->label_q->Text = L"Вероятность выброса Q";
+			this->label_q->Text = L"Р’РµСЂРѕСЏС‚РЅРѕСЃС‚СЊ РІС‹Р±СЂРѕСЃР° Q";
 			// 
 			// textBox_q
 			// 
@@ -223,7 +223,7 @@ namespace Forma1 {
 			this->button_stop->Name = L"button_stop";
 			this->button_stop->Size = System::Drawing::Size(150, 50);
 			this->button_stop->TabIndex = 22;
-			this->button_stop->Text = L"Стоп";
+			this->button_stop->Text = L"РЎС‚РѕРї";
 			this->button_stop->UseVisualStyleBackColor = true;
 			this->button_stop->Click += gcnew System::EventHandler(this, &MyForm::button_stop_Click);
 			// 
@@ -238,7 +238,7 @@ namespace Forma1 {
 			this->label_PopCount->Name = L"label_PopCount";
 			this->label_PopCount->Size = System::Drawing::Size(63, 15);
 			this->label_PopCount->TabIndex = 26;
-			this->label_PopCount->Text = L"Выкинуло";
+			this->label_PopCount->Text = L"Р’С‹РєРёРЅСѓР»Рѕ";
 			// 
 			// label_PushCount
 			// 
@@ -247,7 +247,7 @@ namespace Forma1 {
 			this->label_PushCount->Name = L"label_PushCount";
 			this->label_PushCount->Size = System::Drawing::Size(61, 15);
 			this->label_PushCount->TabIndex = 24;
-			this->label_PushCount->Text = L"Закинуло";
+			this->label_PushCount->Text = L"Р—Р°РєРёРЅСѓР»Рѕ";
 			// 
 			// label1
 			// 
@@ -256,7 +256,7 @@ namespace Forma1 {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(154, 15);
 			this->label1->TabIndex = 28;
-			this->label1->Text = L"Текущий размер Очереди";
+			this->label1->Text = L"РўРµРєСѓС‰РёР№ СЂР°Р·РјРµСЂ РћС‡РµСЂРµРґРё";
 			// 
 			// label_pushedres
 			// 
@@ -316,7 +316,7 @@ namespace Forma1 {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"MyForm";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->Text = L"Циркулирующая очередь";
+			this->Text = L"Р¦РёСЂРєСѓР»РёСЂСѓСЋС‰Р°СЏ РѕС‡РµСЂРµРґСЊ";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -324,7 +324,7 @@ namespace Forma1 {
 		}
 #pragma endregion
 		void Clean() {
-			//Вычисляем стартовый угол
+			//Р’С‹С‡РёСЃР»СЏРµРј СЃС‚Р°СЂС‚РѕРІС‹Р№ СѓРіРѕР»
 			int start = 360 * pQueue->getHead() / pQueue->getMaxSize();
 			int finish = 360 * pQueue->getSize() / pQueue->getMaxSize();
 			gr->DrawArc(WhitePen, CenterX, CenterY, Width, Height, start, finish);
@@ -332,9 +332,9 @@ namespace Forma1 {
 		}
 
 		private: System::Void timer1_Click() {
-			//Стереть очередь
+			//РЎС‚РµСЂРµС‚СЊ РѕС‡РµСЂРµРґСЊ
 			Clean();
-			//Обновить состояние очереди
+			//РћР±РЅРѕРІРёС‚СЊ СЃРѕСЃС‚РѕСЏРЅРёРµ РѕС‡РµСЂРµРґРё
 			if (rnd1->NextDouble() < P) {
 				if (!pQueue->full()) {
 					pQueue->push(1);
@@ -347,7 +347,7 @@ namespace Forma1 {
 					PopCount++;
 				}
 			}
-			//Нарисовать очередь
+			//РќР°СЂРёСЃРѕРІР°С‚СЊ РѕС‡РµСЂРµРґСЊ
 			DrawQueue();
 			/*textBox_PushCount->Text = Convert::ToString(PushCount);
 			textBox_PopCount->Text = Convert::ToString(PopCount);*/
@@ -360,11 +360,11 @@ namespace Forma1 {
 		private: System::Void button_go_Click(System::Object^ sender, System::EventArgs^ e) { // MOVE
 			if (MaxSize != Convert::ToInt32(textBox_maxsize->Text)) flag = 0;
 			if (flag == 0) {
-			//Чтение параметров с формы
+			//Р§С‚РµРЅРёРµ РїР°СЂР°РјРµС‚СЂРѕРІ СЃ С„РѕСЂРјС‹
 				flag = 1;
 				MaxSize = Convert::ToInt32(textBox_maxsize->Text);
 				Size = Convert::ToInt32(textBox_size->Text);
-				//Создание и заполнение очереди
+				//РЎРѕР·РґР°РЅРёРµ Рё Р·Р°РїРѕР»РЅРµРЅРёРµ РѕС‡РµСЂРµРґРё
 				pQueue = new TQueue<int>(MaxSize);
 				for (int i = 0; i < Size; i++) {
 					pQueue->push(1);
@@ -377,22 +377,22 @@ namespace Forma1 {
 		}
 		void DrawQueue() {
 			label_err->Text = "";
-			//Вычисляем стартовый угол
+			//Р’С‹С‡РёСЃР»СЏРµРј СЃС‚Р°СЂС‚РѕРІС‹Р№ СѓРіРѕР»
 			int start = 360 * pQueue->getHead() / pQueue->getMaxSize();
 			int finish = 360 * pQueue->getSize() / pQueue->getMaxSize();
-			//Нарисовать дугу от Tail до Head
+			//РќР°СЂРёСЃРѕРІР°С‚СЊ РґСѓРіСѓ РѕС‚ Tail РґРѕ Head
 			gr->DrawArc(BlackPen, CenterX, CenterY, Width, Height, start, finish);
 		}
 		private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
 			try
 			{
-				// Сохраняем текущий размер очереди в переменную
+				// РЎРѕС…СЂР°РЅСЏРµРј С‚РµРєСѓС‰РёР№ СЂР°Р·РјРµСЂ РѕС‡РµСЂРµРґРё РІ РїРµСЂРµРјРµРЅРЅСѓСЋ
 				int CurrentSize = pQueue->getSize();
 
-				// Проверяем, не пуста ли очередь перед очисткой
+				// РџСЂРѕРІРµСЂСЏРµРј, РЅРµ РїСѓСЃС‚Р° Р»Рё РѕС‡РµСЂРµРґСЊ РїРµСЂРµРґ РѕС‡РёСЃС‚РєРѕР№
 				if (!pQueue->empty()) Clean();
 
-				// Обновляем состояние очереди
+				// РћР±РЅРѕРІР»СЏРµРј СЃРѕСЃС‚РѕСЏРЅРёРµ РѕС‡РµСЂРµРґРё
 				if (rnd1->NextDouble() < P) {
 					if (!pQueue->full()) {
 						pQueue->push(1);
@@ -406,24 +406,24 @@ namespace Forma1 {
 					}
 				}
 
-				// Обновляем текущий размер очереди
+				// РћР±РЅРѕРІР»СЏРµРј С‚РµРєСѓС‰РёР№ СЂР°Р·РјРµСЂ РѕС‡РµСЂРµРґРё
 				CurrentSize = pQueue->getSize();
 
-				// Рисуем очередь
+				// Р РёСЃСѓРµРј РѕС‡РµСЂРµРґСЊ
 				DrawQueue();
 
-				// Обновляем текстовые поля
+				// РћР±РЅРѕРІР»СЏРµРј С‚РµРєСЃС‚РѕРІС‹Рµ РїРѕР»СЏ
 				label_pushedres->Text = Convert::ToString(PushCount);
 				label_poppedres->Text = Convert::ToString(PopCount);
 				label_cursizeres->Text = Convert::ToString(CurrentSize);
 
-				// Проверяем, заполнена ли очередь или пуста
+				// РџСЂРѕРІРµСЂСЏРµРј, Р·Р°РїРѕР»РЅРµРЅР° Р»Рё РѕС‡РµСЂРµРґСЊ РёР»Рё РїСѓСЃС‚Р°
 				if (CurrentSize == MaxSize) {
-					label_err->Text = "Очередь заполнена";
+					label_err->Text = "РћС‡РµСЂРµРґСЊ Р·Р°РїРѕР»РЅРµРЅР°";
 					timer1->Enabled = false;
 				}
 				else if (CurrentSize == 0) {
-					label_err->Text = "Очередь пуста";
+					label_err->Text = "РћС‡РµСЂРµРґСЊ РїСѓСЃС‚Р°";
 					timer1->Enabled = false;
 				}
 				else {
@@ -433,7 +433,7 @@ namespace Forma1 {
 			catch (const char* ex)
 			{
 				flag = 0;
-				label_err->Text = "Ошибка: " + gcnew String(ex);
+				label_err->Text = "РћС€РёР±РєР°: " + gcnew String(ex);
 				timer1->Enabled = false;
 				Clean();
 				delete pQueue;

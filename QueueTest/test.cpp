@@ -117,11 +117,20 @@ TEST(TQueue, Check_compare_two_queues)
     ASSERT_TRUE(q1 == q2);
 }
 
-TEST(TQueue, Check_compare_two_diffrent_queues)
+TEST(TQueue, Check_compare_two_queues2)
 {
     TQueue<int> q1(3), q2(3);
-    q1.push(0); q1.push(0);
-    q2.push(1); q2.push(1);
-
-    ASSERT_TRUE(q1 != q2);
+    q1.push(0); q1.push(0); q1.push(1);
+    q2.push(0); q2.push(1);
+    q1.pop();
+    ASSERT_TRUE(q1 == q2);
+}
+TEST(TQueue, Check_compare_two_queues3)
+{
+    TQueue<int> q1(4), q2(4);
+    q1.push(1); q1.push(2); q1.push(3); q1.push(4);
+    q2.push(3); q2.push(4);
+    q1.pop();
+    q1.pop();
+    ASSERT_TRUE(q1 == q2);
 }
